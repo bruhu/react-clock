@@ -6,6 +6,12 @@ export class Clock extends Component {
     this.state = { date: new Date() };
   }
 
+  //it will run code when a component mounts
+  componentDidMount(){}
+
+  //same when it unmounts
+  componentWillUnmount(){}
+
   render() {
     return (
       <React.Fragment>
