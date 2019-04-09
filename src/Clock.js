@@ -6,11 +6,22 @@ export class Clock extends Component {
     this.state = { date: new Date() };
   }
 
+  //LIFE CYCLE METHODS
   //it will run code when a component mounts
-  componentDidMount(){}
+  componentDidMount() {
+    this.timerID = setInterval(() => this.tick(), 1000);
+  }
 
   //same when it unmounts
-  componentWillUnmount(){}
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  //makes Clock component run every second
+  tick() {
+    //schedules upsdates to the component local state
+    this.setState({ date: new Date() });
+  }
 
   render() {
     return (
